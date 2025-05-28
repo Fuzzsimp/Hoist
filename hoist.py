@@ -1,5 +1,7 @@
 import base64
+import time
 
+print("Welcome to HOIST")
 #Loads input
 sample_string = input("enter text ")
 sample_string_bytes = sample_string.encode("ascii")
@@ -7,14 +9,15 @@ sample_string_bytes = sample_string.encode("ascii")
 #Encrypts input
 base64_bytes = base64.b64encode(sample_string_bytes)
 base64_string = base64_bytes.decode("ascii")
-
-print(f"Encoded string: {base64_string}") #Prints encryption
+print("encoding into BASE64")
+time.sleep(.6283185)
+print(f"encoded string: {base64_string}") #Prints encryption
 
 #De-encryptes for verification
 decode_string_bytes = base64.b64decode(base64_bytes)
 decode_string = decode_string_bytes.decode("ascii")
 
-print(f"Decoded string: {decode_string}")
+print(f"original string: {decode_string}")
 
 
 #-----------------------------------------------
@@ -62,9 +65,12 @@ text_to_encrypt = (f"{base64_string}")
 #Brings in key
 key = input("\n enter key: ")
 
+print("encrypting...")
+time.sleep(1.2)
+
 #Prints outputs
 encrypted_text = encrypt_vigenere(text_to_encrypt, key)
-print(f"Encrypted Text: {encrypted_text}")
+print(f"encrypted text: {encrypted_text}")
 
 decrypted_text = decrypt_vigenere(encrypted_text, key)
-print(f"Decrypted Text: {decrypted_text}")
+print(f"original text: {decrypted_text}")
